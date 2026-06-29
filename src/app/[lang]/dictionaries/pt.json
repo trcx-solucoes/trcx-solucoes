@@ -1,0 +1,75 @@
+{
+  "locale": {
+    "name": "Português",
+    "switchTo": "English"
+  },
+  "nav": {
+    "home": "Início",
+    "experience": "Experiência",
+    "education": "Formação",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "home": {
+    "title": "TRCX Soluções",
+    "subtitle": "Portfólio técnico de Wesley Xavier — engenharia de software e arquitetura de sistemas.",
+    "ctaProjects": "Ver projetos",
+    "ctaContact": "Entrar em contato",
+    "about": {
+      "eyebrow": "Sobre",
+      "heading": "Soluções digitais sob medida.",
+      "paragraphs": [
+        "Sou um desenvolvedor de software comprometido em transformar ideias em soluções digitais únicas e eficazes.",
+        "Atuando de forma independente, ofereço serviços personalizados que vão desde a criação de plataformas web até sistemas específicos sob medida.",
+        "Com foco na qualidade e inovação, utilizo tecnologias de ponta para atender às necessidades dos clientes de forma ágil e eficiente. Meu diferencial está na atenção personalizada e na flexibilidade de trabalhar lado a lado com o cliente, garantindo que cada solução entregue esteja perfeitamente alinhada aos objetivos e desafios específicos do projeto."
+      ]
+    }
+  },
+  "experience": {
+    "title": "Experiência",
+    "description": "Histórico profissional importado do LinkedIn.",
+    "current": "Atual"
+  },
+  "education": {
+    "title": "Formação",
+    "description": "Formação acadêmica, cursos e certificações.",
+    "sections": {
+      "schools": "Acadêmico",
+      "courses": "Cursos",
+      "certifications": "Certificações"
+    },
+    "empty": {
+      "schools": "Sem formação acadêmica cadastrada.",
+      "courses": "Sem cursos cadastrados.",
+      "certifications": "Sem certificações cadastradas."
+    }
+  },
+  "projects": {
+    "title": "Projetos",
+    "description": "Projetos relevantes do meu histórico.",
+    "visit": "Visitar"
+  },
+  "contact": {
+    "title": "Contato",
+    "description": "Caminhos para conversar comigo.",
+    "channels": "Canais diretos",
+    "form": {
+      "heading": "Envie uma mensagem",
+      "description": "Conta sobre seu projeto que eu retorno em até 24h.",
+      "name": "Seu nome",
+      "namePlaceholder": "Como devo te chamar",
+      "email": "Seu e-mail",
+      "emailPlaceholder": "voce@empresa.com",
+      "subject": "Assunto",
+      "subjectPlaceholder": "Em uma frase, sobre o que é",
+      "message": "Mensagem",
+      "messagePlaceholder": "Descreva o desafio, prazo e o que você já tentou.",
+      "submit": "Enviar mensagem",
+      "submitting": "Enviando...",
+      "success": "Mensagem enviada. Retorno em até 24h.",
+      "errorGeneric": "Algo deu errado. Tente novamente ou use os canais diretos acima.",
+      "errorValidation": "Verifique os campos destacados.",
+      "mailtoFallback": "Abrir no seu app de e-mail"
+    }
+  }
+}

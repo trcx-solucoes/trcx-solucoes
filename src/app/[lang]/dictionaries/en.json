@@ -1,0 +1,75 @@
+{
+  "locale": {
+    "name": "English",
+    "switchTo": "Português"
+  },
+  "nav": {
+    "home": "Home",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "TRCX Soluções",
+    "subtitle": "Wesley Xavier's technical portfolio — software engineering and systems architecture.",
+    "ctaProjects": "See projects",
+    "ctaContact": "Get in touch",
+    "about": {
+      "eyebrow": "About",
+      "heading": "Tailor-made digital solutions.",
+      "paragraphs": [
+        "I'm a software developer committed to turning ideas into unique and effective digital solutions.",
+        "Working independently, I deliver personalized services ranging from web platforms to tailor-made systems.",
+        "With a focus on quality and innovation, I use cutting-edge technologies to meet client needs swiftly and efficiently. My edge lies in personalized attention and the flexibility to work side by side with clients, ensuring that every solution delivered aligns perfectly with each project's specific goals and challenges."
+      ]
+    }
+  },
+  "experience": {
+    "title": "Experience",
+    "description": "Professional history imported from LinkedIn.",
+    "current": "Present"
+  },
+  "education": {
+    "title": "Education",
+    "description": "Degrees, courses and certifications.",
+    "sections": {
+      "schools": "Academic",
+      "courses": "Courses",
+      "certifications": "Certifications"
+    },
+    "empty": {
+      "schools": "No academic education on file.",
+      "courses": "No courses on file.",
+      "certifications": "No certifications on file."
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "description": "Selected projects from my track record.",
+    "visit": "Visit"
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "How to reach me.",
+    "channels": "Direct channels",
+    "form": {
+      "heading": "Send a message",
+      "description": "Tell me about your project — I reply within 24h.",
+      "name": "Your name",
+      "namePlaceholder": "What should I call you",
+      "email": "Your email",
+      "emailPlaceholder": "you@company.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "One sentence about it",
+      "message": "Message",
+      "messagePlaceholder": "Describe the challenge, deadline, and what you've already tried.",
+      "submit": "Send message",
+      "submitting": "Sending...",
+      "success": "Message sent. I'll get back within 24h.",
+      "errorGeneric": "Something went wrong. Try again or use the direct channels above.",
+      "errorValidation": "Check the highlighted fields.",
+      "mailtoFallback": "Open in your email app"
+    }
+  }
+}
