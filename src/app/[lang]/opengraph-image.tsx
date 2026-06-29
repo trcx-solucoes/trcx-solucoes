@@ -18,6 +18,8 @@ export function generateStaticParams() {
 }
 
 async function fileToDataUri(relPath: string, mime: string): Promise<string> {
+  // Satori (engine do next/og) só decodifica PNG/JPG/GIF/SVG — WebP não passa.
+  // Versões PNG/JPG dos assets ficam em public/images/ ao lado dos WebPs.
   const buf = await readFile(join(process.cwd(), "public", relPath));
   return `data:${mime};base64,${buf.toString("base64")}`;
 }
@@ -41,11 +43,11 @@ export default async function Image({
   const tag = locale === "pt" ? "Portfólio técnico" : "Technical portfolio";
 
   const [logoHorizontal, logoVertical, photo] = await Promise.all([
-    fileToDataUri("images/horizontal-logo.webp", "image/webp"),
-    fileToDataUri("images/vertical-logo.webp", "image/webp"),
+    fileToDataUri("images/horizontal-logo.png", "image/png"),
+    fileToDataUri("images/vertical-logo.png", "image/png"),
     fileToDataUri(
-      "images/wesley-xavier/terno-preto-busto-sq.webp",
-      "image/webp",
+      "images/wesley-xavier/terno-preto-busto-sq.jpg",
+      "image/jpeg",
     ),
   ]);
 
