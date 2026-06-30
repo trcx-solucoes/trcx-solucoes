@@ -6,6 +6,7 @@ import { BreadcrumbSchema } from "@/components/seo/structured-data";
 import { getCv } from "@/content/cv";
 import { formatRange } from "@/lib/cv-format";
 import { pageMetadata } from "@/lib/page-metadata";
+import { ROUTE_ACCENT } from "@/lib/route-accent";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export async function generateMetadata({
@@ -36,7 +37,10 @@ export default async function ProjectsPage({
   const { projects } = getCv();
 
   return (
-    <div className="flex flex-col gap-8">
+    <div
+      data-accent={ROUTE_ACCENT.projetos}
+      className="flex flex-col gap-8"
+    >
       <BreadcrumbSchema
         lang={lang}
         steps={[

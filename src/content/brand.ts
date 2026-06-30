@@ -15,10 +15,11 @@ export const brand = {
     verticalNegative: "/images/vertical-logo-negative.webp",
   },
   hero: {
-    // Gradiente do hero. Tons claros pra dar respiro contra o logo escuro.
+    // Gradiente derivado de --primary via color-mix — segue o accent da rota
+    // (data-accent no wrapper da página redefine --primary).
     gradient:
-      "bg-[linear-gradient(135deg,var(--primary-50)_0%,var(--primary-100)_30%,var(--primary-200)_100%)]",
+      "bg-[linear-gradient(135deg,color-mix(in_oklab,var(--primary)_5%,white)_0%,color-mix(in_oklab,var(--primary)_12%,white)_50%,color-mix(in_oklab,var(--primary)_22%,white)_100%)]",
     gradientAccent:
-      "bg-[radial-gradient(ellipse_at_top_right,var(--primary-300)_0%,transparent_60%)]",
+      "bg-[radial-gradient(ellipse_at_top_right,color-mix(in_oklab,var(--primary)_30%,transparent)_0%,transparent_60%)]",
   },
 };

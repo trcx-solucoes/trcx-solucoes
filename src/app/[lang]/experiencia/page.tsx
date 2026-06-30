@@ -5,6 +5,7 @@ import { Timeline, type TimelineItem } from "@/components/cv/timeline";
 import { BreadcrumbSchema } from "@/components/seo/structured-data";
 import { getCv } from "@/content/cv";
 import { pageMetadata } from "@/lib/page-metadata";
+import { ROUTE_ACCENT } from "@/lib/route-accent";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export async function generateMetadata({
@@ -42,7 +43,10 @@ export default async function ExperiencePage({
   }));
 
   return (
-    <div className="flex flex-col gap-8">
+    <div
+      data-accent={ROUTE_ACCENT.experiencia}
+      className="flex flex-col gap-8"
+    >
       <BreadcrumbSchema
         lang={lang}
         steps={[

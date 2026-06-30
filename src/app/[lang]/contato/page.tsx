@@ -8,6 +8,7 @@ import { BreadcrumbSchema } from "@/components/seo/structured-data";
 import { getContactChannels } from "@/content/contact";
 import { getCv } from "@/content/cv";
 import { pageMetadata } from "@/lib/page-metadata";
+import { ROUTE_ACCENT } from "@/lib/route-accent";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export async function generateMetadata({
@@ -40,7 +41,10 @@ export default async function ContactPage({
   const fullName = `${profile.firstName} ${profile.lastName}`.trim();
 
   return (
-    <div className="flex flex-col gap-10">
+    <div
+      data-accent={ROUTE_ACCENT.contato}
+      className="flex flex-col gap-10"
+    >
       <BreadcrumbSchema
         lang={lang}
         steps={[

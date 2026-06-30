@@ -23,6 +23,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { AnimatedNumber } from "@/components/cv/animated-number";
 import { getCv } from "@/content/cv";
 import { brand } from "@/content/brand";
 import {
@@ -31,6 +32,7 @@ import {
   groupSkills,
   isTechnical,
 } from "@/lib/skills";
+import { ROUTE_ACCENT } from "@/lib/route-accent";
 import { getDictionary, hasLocale } from "./dictionaries";
 
 const CATEGORY_ICON: Record<SkillCategory, typeof Cloud> = {
@@ -75,25 +77,31 @@ export default async function Home({
   const stats = [
     {
       icon: Briefcase,
-      value: `${yearsActive}+`,
+      value: yearsActive,
+      suffix: "+",
       label: lang === "pt" ? "anos de experiência" : "years of experience",
     },
     {
       icon: Award,
-      value: String(cv.certifications.length),
+      value: cv.certifications.length,
+      suffix: "",
       label: lang === "pt" ? "certificações" : "certifications",
     },
     {
       icon: GraduationCap,
-      value: String(cv.courses.length),
+      value: cv.courses.length,
+      suffix: "",
       label: lang === "pt" ? "cursos concluídos" : "courses completed",
     },
   ];
 
   return (
-    <div className="flex flex-col gap-16 -mt-10">
+    <div
+      data-accent={ROUTE_ACCENT.home}
+      className="flex flex-col gap-12 sm:gap-16 -mt-8 sm:-mt-10"
+    >
       <section
-        className={`relative overflow-hidden rounded-2xl ring-1 ring-foreground/5 ${brand.hero.gradient} px-8 py-16 sm:px-12 sm:py-24`}
+        className={`relative overflow-hidden rounded-2xl ring-1 ring-foreground/5 ${brand.hero.gradient} px-6 py-12 sm:px-10 sm:py-16 lg:px-12 lg:py-24`}
       >
         <div
           className={`absolute inset-0 ${brand.hero.gradientAccent}`}
@@ -246,7 +254,9 @@ export default async function Home({
                 <s.icon className="size-5" />
               </div>
               <div>
-                <p className="text-2xl font-bold leading-none">{s.value}</p>
+                <p className="text-2xl font-bold leading-none tabular-nums">
+                  <AnimatedNumber value={s.value} suffix={s.suffix} />
+                </p>
                 <p className="text-xs text-muted-foreground mt-1">{s.label}</p>
               </div>
             </CardContent>

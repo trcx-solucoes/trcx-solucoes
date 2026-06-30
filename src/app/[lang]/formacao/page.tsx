@@ -7,6 +7,7 @@ import { CertList } from "@/components/cv/cert-list";
 import { BreadcrumbSchema } from "@/components/seo/structured-data";
 import { getCv } from "@/content/cv";
 import { pageMetadata } from "@/lib/page-metadata";
+import { ROUTE_ACCENT } from "@/lib/route-accent";
 import { getDictionary, hasLocale } from "../dictionaries";
 
 export async function generateMetadata({
@@ -44,7 +45,10 @@ export default async function EducationPage({
   }));
 
   return (
-    <div className="flex flex-col gap-12">
+    <div
+      data-accent={ROUTE_ACCENT.formacao}
+      className="flex flex-col gap-12"
+    >
       <BreadcrumbSchema
         lang={lang}
         steps={[

@@ -6,8 +6,9 @@
 
 :root {
   /* === BASE === */
+  /* Logo black/gray como foundation institucional */
   --background: oklch(1 0 0);
-  --foreground: oklch(0.2 0.006 260);
+  --foreground: oklch(0.16 0.005 260); /* logo black */
 
   /* === CARD === */
   --card: oklch(1 0 0);
@@ -92,6 +93,43 @@
   --sidebar-accent-foreground: var(--neutral-900);
   --sidebar-border: var(--neutral-200);
   --sidebar-ring: var(--primary-600);
+
+  /* === SECTION ACCENT === */
+  /* Cada página define data-accent="X" no wrapper; o CSS abaixo reescreve
+     --primary pra cor da seção. Como TODO componente usa text-primary /
+     bg-primary/10 etc., o tema visual da página inteira segue o accent. */
+  --section-accent: var(--primary);
+}
+
+[data-accent="indigo"] {
+  --primary: oklch(0.55 0.22 265);
+  --primary-foreground: oklch(0.985 0 0);
+  --section-accent: oklch(0.55 0.22 265);
+  --ring: oklch(0.55 0.22 265);
+}
+[data-accent="emerald"] {
+  --primary: oklch(0.62 0.15 160);
+  --primary-foreground: oklch(0.985 0 0);
+  --section-accent: oklch(0.62 0.15 160);
+  --ring: oklch(0.62 0.15 160);
+}
+[data-accent="amber"] {
+  --primary: oklch(0.72 0.16 75);
+  --primary-foreground: oklch(0.18 0.005 260);
+  --section-accent: oklch(0.72 0.16 75);
+  --ring: oklch(0.72 0.16 75);
+}
+[data-accent="violet"] {
+  --primary: oklch(0.6 0.22 290);
+  --primary-foreground: oklch(0.985 0 0);
+  --section-accent: oklch(0.6 0.22 290);
+  --ring: oklch(0.6 0.22 290);
+}
+[data-accent="rose"] {
+  --primary: oklch(0.62 0.22 5);
+  --primary-foreground: oklch(0.985 0 0);
+  --section-accent: oklch(0.62 0.22 5);
+  --ring: oklch(0.62 0.22 5);
 }
 
 .dark {

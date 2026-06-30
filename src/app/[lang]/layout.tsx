@@ -62,7 +62,7 @@ export default async function LangLayout({
         }}
         default="none"
       >
-        <main className="flex-1 mx-auto w-full max-w-5xl px-6 py-10">
+        <main className="flex-1 mx-auto w-full max-w-5xl px-4 sm:px-6 py-8 sm:py-10">
           {children}
         </main>
       </ViewTransition>
