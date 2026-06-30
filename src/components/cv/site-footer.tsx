@@ -133,7 +133,11 @@ export function SiteFooter({ lang }: { lang: Locale }) {
       <div className="border-t">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 py-10 sm:py-12 grid gap-10 sm:gap-12 grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div className="flex flex-col gap-3 items-start">
-            <Logo variant="horizontal" height={32} />
+            <Logo
+              variant="horizontal"
+              darkVariant="horizontalNegative"
+              height={32}
+            />
             <p className="text-sm text-muted-foreground max-w-xs leading-relaxed">
               {brand.tagline[lang as "pt" | "en"]}
             </p>

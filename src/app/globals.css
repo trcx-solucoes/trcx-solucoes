@@ -101,6 +101,12 @@
   --section-accent: var(--primary);
 }
 
+/* Header sempre preto institucional, independente de tema claro/escuro. */
+:root, .dark {
+  --header-bg: oklch(0.14 0.005 260);
+  --header-fg: oklch(0.97 0 0);
+}
+
 [data-accent="indigo"] {
   --primary: oklch(0.55 0.22 265);
   --primary-foreground: oklch(0.985 0 0);

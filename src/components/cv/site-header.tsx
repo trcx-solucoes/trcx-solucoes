@@ -32,7 +32,7 @@ export function SiteHeader({
 
   return (
     <header
-      className="bg-foreground text-background sticky top-0 z-50"
+      className="sticky top-0 z-50 bg-[var(--header-bg)] text-[var(--header-fg)]"
       style={{ viewTransitionName: "site-header" }}
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-4">
@@ -55,12 +55,12 @@ export function SiteHeader({
               key={i.href}
               href={i.href}
               transitionTypes={[i.direction]}
-              className="text-background/70 hover:text-background transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-background after:transition-all hover:after:w-full"
+              className="text-[var(--header-fg)]/70 hover:text-[var(--header-fg)] transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[var(--header-fg)] after:transition-all hover:after:w-full"
             >
               {i.label}
             </Link>
           ))}
-          <span className="h-4 w-px bg-background/20" aria-hidden />
+          <span className="h-4 w-px bg-[var(--header-fg)]/20" aria-hidden />
           <LocaleSwitcher current={lang} label={dict.locale.switchTo} />
           <ThemeToggle />
         </nav>

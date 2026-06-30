@@ -18,7 +18,7 @@ export function LocaleSwitcher({
   return (
     <Link
       href={swapped}
-      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+      className="text-sm text-[var(--header-fg)]/70 hover:text-[var(--header-fg)] transition-colors"
       aria-label={`Switch language to ${label}`}
     >
       {label}
