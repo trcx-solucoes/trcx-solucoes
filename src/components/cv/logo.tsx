@@ -4,6 +4,9 @@ import { brand } from "@/content/brand";
 // Wrapper com aspect-ratio CSS travado. Resolve a distorção que acontecia
 // quando Next/Image fica num flex column (align-items: stretch padrão
 // esticava a largura e quebrava a proporção).
+//
+// Quando darkVariant é fornecido, ambas as variantes são renderizadas e o CSS
+// (.dark) decide qual mostrar. Sem flash, sem JS, sem hydration mismatch.
 
 const DIMENSIONS = {
   horizontal: { w: 1275, h: 360 },
@@ -16,12 +19,15 @@ type Variant = keyof typeof DIMENSIONS;
 
 export function Logo({
   variant = "horizontal",
+  darkVariant,
   height,
   priority = false,
   className,
   alt = brand.name,
 }: {
   variant?: Variant;
+  /** Se setado, esta variant é usada quando o tema é dark. */
+  darkVariant?: Variant;
   /** Altura em px. Largura é calculada via aspect-ratio. */
   height: number;
   priority?: boolean;
@@ -29,6 +35,7 @@ export function Logo({
   alt?: string;
 }) {
   const { w, h } = DIMENSIONS[variant];
+
   return (
     <span
       className={className}
@@ -45,8 +52,23 @@ export function Logo({
         width={w}
         height={h}
         priority={priority}
-        className="size-full object-contain"
+        className={
+          darkVariant
+            ? "size-full object-contain block dark:hidden"
+            : "size-full object-contain"
+        }
       />
+      {darkVariant && (
+        <Image
+          src={brand.logo[darkVariant]}
+          alt=""
+          width={DIMENSIONS[darkVariant].w}
+          height={DIMENSIONS[darkVariant].h}
+          priority={priority}
+          className="size-full object-contain hidden dark:block"
+          aria-hidden
+        />
+      )}
     </span>
   );
 }
