@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Briefcase } from "lucide-react";
 import { Timeline, type TimelineItem } from "@/components/cv/timeline";
@@ -55,8 +56,17 @@ export default async function ExperiencePage({
         ]}
       />
       <header className="reveal-on-scroll flex items-start gap-4">
-        <div className="rounded-xl bg-primary/10 text-primary p-3 ring-1 ring-primary/20">
-          <Briefcase className="size-5" />
+        <div className="relative size-16 sm:size-20 rounded-2xl overflow-hidden ring-2 ring-primary/30 shrink-0">
+          <Image
+            src="/images/wesley-xavier/terno-cinza-sq.webp"
+            alt="Wesley Xavier"
+            fill
+            sizes="80px"
+            className="object-cover"
+          />
+          <div className="absolute bottom-1 right-1 size-7 rounded-lg bg-primary text-primary-foreground flex items-center justify-center ring-2 ring-background">
+            <Briefcase className="size-3.5" />
+          </div>
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-primary mb-2">

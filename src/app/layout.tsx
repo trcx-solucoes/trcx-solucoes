@@ -87,6 +87,21 @@ export const viewport: Viewport = {
   ],
 };
 
+// Script inline anti-FOUC: aplica a classe .dark ANTES do React renderizar.
+// Sem isso, há um flash do tema errado no carregamento.
+const themeScript = `
+(function(){try{
+  var s=localStorage.getItem('theme');
+  var d=window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if(s==='dark'||(s!=='light'&&d)){
+    document.documentElement.classList.add('dark');
+    document.documentElement.style.colorScheme='dark';
+  } else {
+    document.documentElement.style.colorScheme='light';
+  }
+}catch(e){}})();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -99,6 +114,9 @@ export default function RootLayout({
       className={`${inter.variable} ${geistMono.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="min-h-full flex flex-col font-sans">{children}</body>
       {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>

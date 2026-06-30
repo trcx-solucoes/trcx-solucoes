@@ -15,11 +15,13 @@ export const brand = {
     verticalNegative: "/images/vertical-logo-negative.webp",
   },
   hero: {
-    // Gradiente derivado de --primary via color-mix — segue o accent da rota
-    // (data-accent no wrapper da página redefine --primary).
+    // Gradiente cinza derivado de --foreground (logo black). Independente do
+    // accent da rota — o tom institucional preto/cinza fica constante no hero.
     gradient:
-      "bg-[linear-gradient(135deg,color-mix(in_oklab,var(--primary)_5%,white)_0%,color-mix(in_oklab,var(--primary)_12%,white)_50%,color-mix(in_oklab,var(--primary)_22%,white)_100%)]",
+      "bg-[linear-gradient(135deg,color-mix(in_oklab,var(--foreground)_4%,var(--background))_0%,color-mix(in_oklab,var(--foreground)_9%,var(--background))_50%,color-mix(in_oklab,var(--foreground)_15%,var(--background))_100%)]",
+    // Toque sutil do accent da rota como brilho radial — mantém um sinal de cor
+    // sem virar wallpaper inteiro.
     gradientAccent:
-      "bg-[radial-gradient(ellipse_at_top_right,color-mix(in_oklab,var(--primary)_30%,transparent)_0%,transparent_60%)]",
+      "bg-[radial-gradient(ellipse_at_top_right,color-mix(in_oklab,var(--primary)_18%,transparent)_0%,transparent_55%)]",
   },
 };

@@ -4,6 +4,7 @@ import { brand } from "@/content/brand";
 import { Logo } from "./logo";
 import { LocaleSwitcher } from "./locale-switcher";
 import { MobileMenu } from "./mobile-menu";
+import { ThemeToggle } from "./theme-toggle";
 
 // Hierarquia da navegação: o "home" funciona como nível 0 (back), o resto
 // como nível 1+ (forward). View Transitions usam essa info pra direcionar o
@@ -31,7 +32,7 @@ export function SiteHeader({
 
   return (
     <header
-      className="border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50"
+      className="bg-foreground text-background sticky top-0 z-50"
       style={{ viewTransitionName: "site-header" }}
     >
       <div className="mx-auto max-w-5xl px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between gap-4">
@@ -42,8 +43,8 @@ export function SiteHeader({
           aria-label={brand.name}
         >
           <Logo
-            variant="horizontal"
-            height={26}
+            variant="horizontalNegative"
+            height={28}
             priority
             className="transition-transform group-hover:scale-105"
           />
@@ -54,19 +55,23 @@ export function SiteHeader({
               key={i.href}
               href={i.href}
               transitionTypes={[i.direction]}
-              className="text-muted-foreground hover:text-foreground transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              className="text-background/70 hover:text-background transition-colors relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-background after:transition-all hover:after:w-full"
             >
               {i.label}
             </Link>
           ))}
+          <span className="h-4 w-px bg-background/20" aria-hidden />
           <LocaleSwitcher current={lang} label={dict.locale.switchTo} />
+          <ThemeToggle />
         </nav>
-        <MobileMenu
-          className="md:hidden"
-          items={items}
-          lang={lang}
-          switchLabel={dict.locale.switchTo}
-        />
+        <div className="md:hidden flex items-center gap-1">
+          <ThemeToggle />
+          <MobileMenu
+            items={items}
+            lang={lang}
+            switchLabel={dict.locale.switchTo}
+          />
+        </div>
       </div>
     </header>
   );

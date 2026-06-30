@@ -109,7 +109,7 @@ export default async function Home({
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-12 -top-8 sm:-right-4 sm:-top-12 opacity-[0.07] mix-blend-multiply"
+          className="pointer-events-none absolute right-4 sm:right-8 top-1/2 -translate-y-1/2 opacity-[0.06] mix-blend-multiply"
         >
           <Image
             src={brand.logo.vertical}
@@ -117,7 +117,7 @@ export default async function Home({
             width={640}
             height={729}
             priority
-            className="w-[260px] sm:w-[420px] h-auto"
+            className="w-[180px] sm:w-[240px] lg:w-[300px] h-auto"
           />
         </div>
         <div className="relative flex flex-col gap-5 max-w-2xl">
